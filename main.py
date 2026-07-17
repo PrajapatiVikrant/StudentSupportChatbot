@@ -1,6 +1,6 @@
-from retrieval.vector_store import search
+from retrieval.vectore_store import search
 from genai.prompt import build_prompt
-from genai.grok import ask_gemini
+from genai.grok import ask_groq
 from utils.chat_history import add_message
 from nlp.intent import detect_intent
 from nlp.entities import extract_entities
@@ -42,7 +42,7 @@ Answer:
 
     prompt = build_prompt(query, context)
 
-    response = ask_gemini(prompt)
+    response = ask_groq(prompt)
 
     print("\nBot :", response)
 

@@ -1,4 +1,4 @@
-from retrieval.vector_store import search
+from retrieval.vectore_store import search
 from genai.prompt import build_prompt
 from genai.grok import ask_groq
 from nlp.intent import detect_intent

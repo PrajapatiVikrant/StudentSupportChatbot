@@ -1,25 +1,17 @@
 import json
 import os
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def load_json(filename):
+    file_path = os.path.join(BASE_DIR, "knowledge", filename)
 
-    base_dir = os.path.dirname(os.path.dirname(__file__))
+    print("BASE_DIR :", BASE_DIR)
+    print("FILE_PATH:", file_path)
+    print("Exists   :", os.path.exists(file_path))
 
-    file_path = os.path.join(
-        base_dir,
-        "knowledge",
-        filename
-    )
+    with open(file_path, "r", encoding="utf-8") as f:
+        return json.load(f)
 
-    with open(file_path, "r", encoding="utf-8") as file:
-
-        data = json.load(file)
-
-    return data
-
-
-# ADD THIS
 def load_knowledge():
-
     return load_json("knowledge_base.json")
